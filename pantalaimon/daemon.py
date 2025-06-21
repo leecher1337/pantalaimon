@@ -1353,11 +1353,11 @@ class ProxyDaemon:
             )
 
             if response is None and decrypted_file is None:
-                return await self.forward_to_web(request)
+                return await self.forward_to_web(request, token=client.access_token)
         except ClientConnectionError as e:
             return web.Response(status=500, text=str(e))
         except KeyError:
-            return await self.forward_to_web(request)
+            return await self.forward_to_web(request, token=client.access_token)
 
         if not isinstance(response, DownloadResponse):
             return web.Response(

@@ -95,17 +95,17 @@ async def init(data_dir, server_conf, send_queue, recv_queue):
             web.options("/_matrix/client/r0/search", proxy.search_opts),
             web.options("/_matrix/client/v3/search", proxy.search_opts),
             web.get(
-                "/_matrix/media/v1/download/{server_name}/{media_id}", proxy.download
+                "/_matrix/client/v1/media/download/{server_name}/{media_id}", proxy.download
             ),
             web.get(
-                "/_matrix/media/v3/download/{server_name}/{media_id}", proxy.download
+                "/_matrix/client/v3/media/download/{server_name}/{media_id}", proxy.download
             ),
             web.get(
-                "/_matrix/media/v1/download/{server_name}/{media_id}/{file_name}",
+                "/_matrix/cloent/v1/media/download/{server_name}/{media_id}/{file_name}",
                 proxy.download,
             ),
             web.get(
-                "/_matrix/media/v3/download/{server_name}/{media_id}/{file_name}",
+                "/_matrix/client/v3/media/download/{server_name}/{media_id}/{file_name}",
                 proxy.download,
             ),
             web.get(

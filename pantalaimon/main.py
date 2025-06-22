@@ -101,7 +101,7 @@ async def init(data_dir, server_conf, send_queue, recv_queue):
                 "/_matrix/client/v3/media/download/{server_name}/{media_id}", proxy.download
             ),
             web.get(
-                "/_matrix/cloent/v1/media/download/{server_name}/{media_id}/{file_name}",
+                "/_matrix/client/v1/media/download/{server_name}/{media_id}/{file_name}",
                 proxy.download,
             ),
             web.get(
